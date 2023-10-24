@@ -90,34 +90,37 @@ main {
 
 div.nft-image {
      object-fit: cover;
-     /* overflow: hidden; */
+     overflow: hidden;
+     position: relative;
+     border-radius: .8em;
 }
 
 
 
 .card__image {
-     position: relative;
      width: 100%;
      height: 300px;
-     border-radius: .8em;
 }
 
-.card__image::after {
-     content: url(../img/icon-view.svg);
-	background-color: rgba(156, 239, 239,0.5);
-
-	display: flex;
-     justify-content:center ;
-     align-items: center;
-	opacity: 0;
-	transition:  ease-in-out var(--trs-defaults);
-
-	position: absolute;
-	inset: 0;
-
-}
-.card__image:is(:hover, :focus)::after {
+/* .card__image:is(:hover, :focus)::after {
 	opacity: 1;
+} */
+
+.card__image_overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     opacity: 0.5;
+     background-color: var(--clr-primary-cyan);
+     display: none;
+     align-items: center;
+     justify-content: center;
+}
+
+.card__image_overlay:hover {
+     cursor: pointer;
 }
 
 div.nft-info {
